@@ -1,0 +1,248 @@
+
+/*----------------------------------------------
+
+17. THUMB OVERLAY EFFECT
+
+------------------------------------------------*/
+
+.thumb-hover {
+  overflow: hidden;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  /* workaround for inline-block margin */
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  .overlay-caption {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    padding: 7%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: auto;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+}
+
+/* overlay caption */
+
+.double-width .thumb-hover .overlay-caption {
+  padding: 3.5%;
+}
+
+.thumb-hover {
+  .overlay-caption {
+    &:not(.align-left):not(.align-right) {
+      text-align: center;
+    }
+    &.bottom {
+      top: inherit;
+      bottom: 0;
+      -webkit-transform: translateY(0%);
+      -moz-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      -o-transform: translateY(0%);
+      transform: translateY(0%);
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+99&0+0,1+100 */
+      background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.99) 99%, rgba(0, 0, 0, 1) 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.99) 99%, rgba(0, 0, 0, 1) 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.99) 99%, rgba(0, 0, 0, 1) 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+      /* IE6-9 */
+    }
+    &.top {
+      top: 0;
+      -webkit-transform: translateY(0%);
+      -moz-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      -o-transform: translateY(0%);
+      transform: translateY(0%);
+    }
+    &.hidden {
+      opacity: 0;
+      visibility: hidden;
+      filter: alpha(opacity = 0);
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      transition: opacity 0.5s ease;
+    }
+  }
+  &:hover .overlay-caption.hidden {
+    opacity: 1;
+    visibility: visible;
+    filter: alpha(opacity = 100);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  }
+  .overlay-caption {
+    &.hidden:not(.fade) {
+      .caption-sub, .caption-name {
+        display: block;
+        -webkit-transform: translateY(20px);
+        -moz-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        -o-transform: translateY(20px);
+        transform: translateY(20px);
+        opacity: 0;
+        filter: alpha(opacity = 0);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        transition: all 0.6s ease 0s;
+      }
+    }
+    &.top.hidden:not(.fade) {
+      .caption-sub, .caption-name {
+        -webkit-transform: translateY(-20px);
+        -moz-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        -o-transform: translateY(-20px);
+        transform: translateY(-20px);
+      }
+    }
+  }
+  &:hover .overlay-caption.hidden:not(.fade) {
+    .caption-name {
+      transition-delay: 0.15s;
+    }
+    .caption-sub, .caption-name {
+      -webkit-transform: translateX(0px) translateY(0px);
+      -moz-transform: translateX(0px) translateY(0px);
+      -ms-transform: translateX(0px) translateY(0px);
+      -o-transform: translateX(0px) translateY(0px);
+      transform: translateX(0px) translateY(0px);
+      opacity: 1;
+      filter: alpha(opacity = 100);
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+  }
+  .overlay-caption {
+    .caption-sub, .caption-name {
+      line-height: 1.3em !important;
+    }
+  }
+}
+
+.caption-sub + .caption-name, .caption-name + .caption-sub {
+  margin-top: 8px;
+}
+
+.caption-dark {
+  .caption-sub, .caption-name {
+    color: #000000;
+    transition: color 0.41s ease;
+  }
+}
+
+.caption-light {
+  .caption-sub, .caption-name {
+    color: #ffffff;
+    transition: color 0.41s ease;
+  }
+}
+
+/* img effect */
+
+.thumb-hover {
+  img {
+    transition: all 0.6s ease 0s;
+  }
+  &.scale {
+    img {
+      -webkit-transform: scale(1.03);
+      -moz-transform: scale(1.03);
+      -ms-transform: scale(1.03);
+      -o-transform: scale(1.03);
+      transform: scale(1.03);
+    }
+    &:hover img {
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  &.overlay-color {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.5);
+      z-index: 1;
+      opacity: 0;
+      filter: alpha(opacity = 0);
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      transition: opacity 0.4s ease;
+    }
+    &.text-light::before {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+        filter: alpha(opacity = 100);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      }
+      .caption-sub, .caption-name {
+        color: #000000;
+      }
+    }
+  }
+  &.text-light.overlay-color:hover {
+    .caption-sub, .caption-name {
+      color: #ffffff;
+    }
+  }
+  .hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.4s ease;
+    > img {
+      object-fit: cover;
+      object-position: 50% 50%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &.image:hover img:not(.hover) {
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+}
+
+/* overlay effect */
+
+/* video hover (only for desktops) */
+@media only screen and (min-width: 1024px) {
+  .thumb-hover.play-on-hover {
+    img {
+      transition: all 0.3s ease;
+    }
+    &:hover img {
+      opacity: 0;
+      filter: alpha(opacity = 0);
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+  }
+}
+
+/* 2nd hover image */

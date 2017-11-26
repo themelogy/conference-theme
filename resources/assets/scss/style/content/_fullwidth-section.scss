@@ -1,0 +1,15 @@
+
+/*----------------------------------------------
+
+16. FULLWIDTH SECTION
+
+------------------------------------------------*/
+
+.fullwidth-section {
+  .fullwidth-content {
+    padding: 100px 0;
+  }
+  &.nopadding .fullwidth-content {
+    padding: 0;
+  }
+}

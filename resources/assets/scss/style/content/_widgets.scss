@@ -1,0 +1,433 @@
+
+/*----------------------------------------------
+
+20. WIDGETS
+
+------------------------------------------------*/
+
+/* General Widgets
+-------------------------------- */
+
+.widget {
+  margin-top: 60px;
+  height: auto;
+  .logo {
+    height: 100px;
+  }
+}
+
+div .widget:first-child {
+  margin-top: 0px;
+}
+
+.widget-title {
+  font-size: 16px;
+  font-weight: 400;
+  + {
+    div, ul, p, ol {
+      margin-top: 10px;
+    }
+  }
+}
+
+/* Menu Widget
+-------------------------------- */
+
+.widget ul:not(.socialmedia-widget) {
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
+  li {
+    margin:5px 0 0 0;
+    padding-left: 15px;
+    line-height: $footer-link-lh;
+    position: relative;;
+    transition: color 0.2s ease;
+    &::before {
+      font-family: "FontAwesome";
+      content: "\f105";
+      display:block;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      left:0;
+      top:0;
+      transition: all .2s;
+    }
+    &:hover::before {
+      color: $brand-color;
+      transform: translateX(2px);
+    }
+    a {
+      font-weight: 400;
+      display: block;
+      font-size: 12px;
+      transition: color 0.2s ease;
+      color: #000000;
+      &:hover {
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+.text-light .widget ul:not(.socialmedia-widget) li a {
+  color: #ffffff;
+  &:hover {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.widget ul:not(.socialmedia-widget) ul {
+  &.sub-menu, &.children {
+    margin: 0 0 10px 0;
+    padding: 0 0 0 10px;
+  }
+  &.sub-menu li a, &.children li a {
+    font-size: 0.85em;
+    line-height: 1.5em;
+  }
+}
+
+/* Categorie Widget
+-------------------------------- */
+
+.widget_categories ul li a {
+  display: inline-block !important;
+}
+
+/* Social Media Widget
+-------------------------------- */
+
+.socialmedia-widget {
+  margin: 15px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+div .socialmedia-widget:first-child {
+  margin: 0;
+}
+
+.socialmedia-widget li {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  a {
+    line-height: 20px;
+    color: #000000;
+    transition: all 0.2s ease;
+    display: block;
+    text-align: center;
+    padding: 0 6px 0 6px;
+  }
+  &:first-child a {
+    padding-left: 0px;
+  }
+  &:last-child a {
+    padding-right: 0px;
+  }
+}
+
+.text-light:not(.transparent) .socialmedia-widget li a, .menu-dark .socialmedia-widget li a {
+  color: #ffffff;
+}
+
+.socialmedia-widget li {
+  a {
+    &:hover {
+      opacity: 1;
+    }
+    &::before {
+      display: block;
+      transition: all 0.3s ease;
+      font-family: FontAwesome;
+      font-size: 16px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+  &.facebook a::before {
+    content: "\f09a";
+  }
+  &.twitter a::before {
+    content: "";
+  }
+  &.tumblr a::before {
+    content: "\f173";
+  }
+  &.vimeo a::before {
+    content: "\f27d";
+  }
+  &.dribbble a::before {
+    content: "\f17d";
+  }
+  &.deviantart a::before {
+    content: "\f1bd";
+  }
+  &.behance a::before {
+    content: "\f1b4";
+  }
+  &.flickr a::before {
+    content: "\f16e";
+  }
+  &.linkedin a::before {
+    content: "\f0e1";
+  }
+  &.rss a::before {
+    content: "\f09e";
+  }
+  &.googleplus a::before {
+    content: "\f0d5";
+  }
+  &.pinterest a::before {
+    content: "\f0d2";
+  }
+  &.youtube a::before {
+    content: "\f167";
+  }
+  &.mail a::before {
+    content: "\f1fa";
+  }
+  &.instagram a::before {
+    content: "\f16d";
+  }
+  &.xing a::before {
+    content: "\f168";
+  }
+  &.dropbox a::before {
+    content: "\f16b";
+  }
+  &.stumbleupon a::before {
+    content: "\f1a4";
+  }
+  &.delicious a::before {
+    content: "\f1a5";
+  }
+  &.wordpress a::before {
+    content: "\f19a";
+  }
+  &.vk a::before {
+    content: "\f189";
+  }
+  &.soundcloud a::before {
+    content: "\f1be";
+  }
+  &.spotify a::before {
+    content: "\f1bc";
+  }
+  &.codepen a::before {
+    content: "\f1cb";
+  }
+  &.github a::before {
+    content: "\f09b";
+  }
+  &.lastfm a::before {
+    content: "\f202";
+  }
+  &.jsfiddle a::before {
+    content: "\f1cc";
+  }
+  &.mixcloud a::before {
+    content: "\f289";
+  }
+  &.skype a::before {
+    content: "\f17e";
+  }
+  &.url a::before {
+    content: "\f0ac";
+  }
+  &.facebook a:hover {
+    color: #446ebf;
+  }
+  &.twitter a:hover {
+    color: #39aadc;
+  }
+  &.tumblr a:hover {
+    color: #4c6781;
+  }
+  &.vimeo a:hover {
+    color: #15c9f5;
+  }
+  &.dribbble a:hover {
+    color: #f14980;
+  }
+  &.deviantart a:hover {
+    color: #2ea06f;
+  }
+  &.behance a:hover {
+    color: #00b0f0;
+  }
+  &.flickr a:hover {
+    color: #f04783;
+  }
+  &.linkedin a:hover {
+    color: #81d3fd;
+  }
+  &.rss a:hover {
+    color: #ff8322;
+  }
+  &.googleplus a:hover {
+    color: #d63d1e;
+  }
+  &.pinterest a:hover {
+    color: #c81e1e;
+  }
+  &.youtube a:hover {
+    color: #ee423d;
+  }
+  &.mail a:hover {
+    color: #74624d;
+  }
+  &.instagram a:hover {
+    color: #95604b;
+  }
+  &.xing a:hover {
+    color: #036567;
+  }
+  &.dropbox a:hover {
+    color: #008cd2;
+  }
+  &.stumbleupon a:hover {
+    color: #f94213;
+  }
+  &.delicious a:hover {
+    color: #1b59c3;
+  }
+  &.wordpress a:hover {
+    color: #118bc0;
+  }
+  &.vk a:hover {
+    color: #29577b;
+  }
+  &.soundcloud a:hover {
+    color: #ff7700;
+  }
+  &.spotify a:hover {
+    color: #80b900;
+  }
+  &.codepen a:hover, &.github a:hover {
+    color: #171515;
+  }
+  &.lastfm a:hover {
+    color: #f94f14;
+  }
+  &.jsfiddle a:hover {
+    color: #0c9de8;
+  }
+  &.mixcloud a:hover {
+    color: #29587c;
+  }
+  &.skype a:hover {
+    color: #00aef3;
+  }
+  &.url a:hover {
+    color: #579abc;
+  }
+}
+
+/* Search Widget
+-------------------------------- */
+
+.widget_search form.searchform, .widget_product_search form.searchform {
+  position: relative;
+  margin-top: 15px;
+}
+
+.widget_search form.searchform:first-child, .widget_product_search form.searchform:first-child {
+  margin: 0;
+}
+
+.widget_search form.searchform input[type=submit], .widget_product_search form.searchform input[type=submit] {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  padding: 0;
+  height: 40px;
+  opacity: 0;
+  z-index: 2;
+}
+
+.widget_search form.searchform::before, .widget_product_search form.searchform::before {
+  content: "";
+  width: 9px;
+  height: 1.5px;
+  background: #808080;
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 13px;
+  z-index: 1;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.widget_search form.searchform::after, .widget_product_search form.searchform::after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  right: 18px;
+  border: 1.5px solid #808080;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* Tag Cloud
+------------------------------------------------*/
+
+.widget_tag_cloud a {
+  background: rgba(0, 0, 0, 0.06);
+  display: inline-block;
+  color: #000000;
+  font-size: 13px;
+  line-height: 19px;
+  padding: 4px 7px;
+  margin: 0 3px 5px 0;
+  &:hover {
+    background: rgba(0, 0, 0, 0.12);
+  }
+}
+
+/*	Recent Posts
+------------------------------------------------*/
+
+.widget_recent_entries li span.post-date {
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-top: 4px;
+  display: block;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.text-light:not(.transparent) .widget_recent_entries li span.post-date, .menu-dark .widget_recent_entries li span.post-date {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/*	Recent Comments
+------------------------------------------------*/
+
+.widget_recent_comments li {
+  a {
+    display: inline-block;
+  }
+  span.comment-author-link a {
+    font-style: italic;
+  }
+}
+
+/*	Archive Widget
+------------------------------------------------*/
+
+.widget_archive ul li a {
+  display: inline-block;
+}

@@ -1,0 +1,471 @@
+
+/* footer color switch */
+
+/*----------------------------------------------
+
+5. 	MENU
+
+------------------------------------------------*/
+
+#menu-inner {
+  width: 100%;
+  height: calc(100% - 150px);
+  /* Logo height */
+  margin-top: 100px;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  -webkit-background-clip: padding-box;
+  /* for Safari */
+  background-clip: padding-box;
+  /* for IE9+, Firefox 4+, Opera, Chrome */
+  transition: all 0.3s ease 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  overflow-x: hidden;
+  background: #ffffff;
+  /* needed for mquerries */
+}
+
+header.menu-is-open #menu-inner {
+  transition-delay: 0.2s;
+  opacity: 1;
+  visibility: visible;
+  overflow-y: hidden;
+}
+
+nav#main-nav {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  > ul > li {
+    margin: 8px 0;
+    display: block;
+    padding: 0;
+    position: relative;
+    left: 0px;
+    padding-left: calc(80px + 40px);
+    /*80 + 30 */
+    -webkit-transform: translateX(-50px);
+    -moz-transform: translateX(-50px);
+    -ms-transform: translateX(-50px);
+    -o-transform: translateX(-50px);
+    transform: translateX(-50px);
+    transition: all 0.5s ease;
+    transition-delay: 0s;
+    opacity: 0;
+    visibility: hidden;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+header {
+  &.header-right nav#main-nav > ul > li {
+    -webkit-transform: translateX(50px);
+    -moz-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    -o-transform: translateX(50px);
+    transform: translateX(50px);
+    text-align: right;
+    padding-right: calc(80px + 40px);
+    /*80 + 30 */
+    padding-left: 0;
+  }
+  &.menu-is-open nav#main-nav > ul > li {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.3s;
+    &:nth-child(2) {
+      transition-delay: 0.34s;
+    }
+    &:nth-child(3) {
+      transition-delay: 0.38s;
+    }
+    &:nth-child(4) {
+      transition-delay: 0.42s;
+    }
+    &:nth-child(5) {
+      transition-delay: 0.46s;
+    }
+    &:nth-child(6) {
+      transition-delay: 0.50s;
+    }
+    &:nth-child(7) {
+      transition-delay: 0.54s;
+    }
+    &:nth-child(8) {
+      transition-delay: 0.58s;
+    }
+  }
+}
+
+nav#main-nav {
+  ul > li > a {
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 24px;
+    display: inline-block;
+    width: auto;
+    letter-spacing: 0.0em;
+    color: #000000;
+    height: 32px;
+    line-height: 32px;
+    position: relative;
+    transition: all 0.3s ease;
+    /*overflow: hidden;*/
+    vertical-align: bottom;
+    /* workaround bottom margin */
+  }
+  &:not(.underline) ul > li {
+    > a:hover, &.current_page_item > a, &.active > a {
+      color: rgba($brand-color, 0.85);
+    }
+  }
+  ul > li > a small {
+    opacity: 0.5;
+  }
+  &.underline {
+    ul > li {
+      > a {
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0px;
+          width: 100%;
+          height: 2px;
+          background: #000000;
+          transition: all 0.3s ease;
+          left: 0px;
+          opacity: 0;
+          -webkit-transform: translateX(-0%);
+          -moz-transform: translateX(-0%);
+          -ms-transform: translateX(-0%);
+          -o-transform: translateX(-0%);
+          transform: translateX(-0%);
+          transition: all 0.4s ease;
+        }
+        &:hover::after {
+          opacity: 1;
+        }
+      }
+      &.current_page_item > a::after {
+        opacity: 1;
+      }
+    }
+    &.slide ul > li > a::after {
+      left: -120px;
+      -webkit-transform: translateX(-101%);
+      -moz-transform: translateX(-101%);
+      -ms-transform: translateX(-101%);
+      -o-transform: translateX(-101%);
+      transform: translateX(-101%);
+    }
+  }
+}
+
+/* Fade In Hover */
+
+/* Slide in Hover */
+
+header.header-right nav#main-nav.underline.slide ul > li > a::after {
+  left: auto;
+  right: -120px;
+  -webkit-transform: translateX(101%);
+  -moz-transform: translateX(101%);
+  -ms-transform: translateX(101%);
+  -o-transform: translateX(101%);
+  transform: translateX(101%);
+}
+
+nav#main-nav.underline.slide ul > li {
+  > a:hover::after, &.current_page_item > a::after {
+    left: 0px;
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+header.header-right nav#main-nav.underline.slide ul > li {
+  > a:hover::after, &.current_page_item > a::after {
+    left: auto;
+    right: 0px;
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+nav#main-nav {
+  > ul > li ul.sub-menu {
+    margin: 0;
+    padding: 7px 0 12px 2px;
+    display: none;
+    width: auto;
+  }
+  ul.sub-menu ul.sub-menu {
+    padding: 10px 0 10px 10px;
+    margin: 0;
+    display: none;
+  }
+}
+
+header:not(.menu-open) nav#main-nav ul.sub-menu li:last-child > ul.sub-menu {
+  padding-bottom: 0;
+}
+
+nav#main-nav ul.sub-menu {
+  li {
+    margin: 3px 0 2px 0;
+  }
+  > li > a {
+    font-weight: 300;
+    font-size: 16px;
+    height: 22px;
+    line-height: 22px;
+  }
+}
+
+/*----------------------------------------------
+
+6. 	MENU ACTIONS (Hamburger + language)
+
+------------------------------------------------*/
+
+.menu-actions {
+  position: relative;
+  z-index: 10;
+  transition: all 0.4s ease;
+  margin-top: 30px;
+  width: 80px;
+}
+
+header {
+  &.header-right .menu-actions {
+    float: right;
+  }
+  &.action-is-active .menu-actions {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.menu-toggle {
+  width: 30px;
+  height: 30px;
+  max-width: 100%;
+  position: relative;
+  left: calc(50% - 15px);
+  display: block;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 10;
+  transition: height 0.3s ease, transform 0.4s ease;
+  span.hamburger {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: #000000;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    left: 50%;
+    margin-left: -13px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+    -moz-transition: all 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+    -o-transition: all 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+    -moz-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+    -o-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+    transition-delay: 0s;
+    &:after {
+      content: "";
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: #000000;
+      position: absolute;
+      top: 50%;
+      margin-top: -1px;
+      left: 50%;
+      margin-left: -13px;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: all 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+      -moz-transition: all 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+      -o-transition: all 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+      transition: all 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+      -webkit-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+      -moz-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+      -o-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+      transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+      transition-delay: 0s;
+    }
+    &:before {
+      content: "";
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: #000000;
+      position: absolute;
+      top: 50%;
+      margin-top: -1px;
+      left: 50%;
+      margin-left: -13px;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: all 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+      -moz-transition: all 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+      -o-transition: all 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+      transition: all 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+      -webkit-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+      -moz-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+      -o-transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+      transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+      transition-delay: 0s;
+      margin-top: -7px;
+      top: 0;
+    }
+    &:after {
+      margin-top: 7px;
+      top: 0;
+    }
+  }
+}
+
+/* hamburger animation */
+
+header {
+  &:not(.menu-is-open) .menu-toggle:hover span.hamburger {
+    width: 18px;
+    margin-left: -9px;
+  }
+  &.menu-is-open .menu-toggle span.hamburger {
+    background: transparent !important;
+    transition-delay: 0.1s;
+    transition-duration: 0.2s;
+    &:before {
+      -webkit-transform: rotate(135deg);
+      -moz-transform: rotate(135deg);
+      -o-transform: rotate(135deg);
+      transform: rotate(135deg);
+      margin-top: 0px;
+    }
+    &:after {
+      -webkit-transform: rotate(-135deg);
+      -moz-transform: rotate(-135deg);
+      -o-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+      margin-top: 0px;
+    }
+  }
+  &.text-light {
+    background: #000000;
+    border-color: rgba(255, 255, 255, 0.21);
+    &::after {
+      background: rgba(255, 255, 255, 0.21);
+    }
+    nav#main-nav {
+      ul > li > a {
+        color: #ffffff;
+      }
+      &:not(.underline) ul > li {
+        > a:hover, &.current_page_item > a {
+          color: rgba(255, 255, 255, 0.75);
+        }
+      }
+      ul > li > a::after {
+        background: #ffffff;
+      }
+    }
+    .menu-toggle span.hamburger {
+      background: #ffffff;
+      &:after, &:before {
+        background: #ffffff;
+      }
+    }
+    #menu-inner, #header-actions-overlay {
+      background: #000000;
+    }
+  }
+}
+
+/*----------------------------------------------
+
+7. HEADER / MENU OPTIONS
+
+------------------------------------------------*/
+
+/* dark header */
+
+/* switch logo appearance */
+
+.loading-end header:not(.hero-invisible) #logo.text-light:not(.hide-on-hero) img#dark-logo {
+  opacity: 0;
+  visibility: hidden;
+  + img#light-logo {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+body {
+  &:not(.loading-end) #page-loader.show-logo.text-light + #page-content #logo img#dark-logo, #logo.bg-dark img#dark-logo {
+    opacity: 0;
+    visibility: hidden;
+    + img#light-logo {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+/* depending on the fullwidth text light section */
+
+header {
+  &.menu-is-open #logo img#dark-logo, &.action-is-active #logo img#dark-logo {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  &.menu-is-open #logo img#dark-logo + img#light-logo, &.action-is-active #logo img#dark-logo + img#light-logo {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  &.text-light {
+    &.menu-is-open #logo img#dark-logo, &.action-is-active #logo img#dark-logo {
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+    &.menu-is-open #logo img#dark-logo + img#light-logo, &.action-is-active #logo img#dark-logo + img#light-logo {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+  }
+}

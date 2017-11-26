@@ -1,0 +1,81 @@
+
+/*----------------------------------------------
+
+2. GENERAL ELEMENTS
+
+------------------------------------------------*/
+
+#page-content {
+  overflow: hidden;
+  margin: 0;
+  min-width: 1200px;
+  max-width: 100%;
+  min-height: 101vh;
+}
+
+.loading-end #page-content {
+  min-height: auto;
+}
+
+/*workaround for isotope content (without other content) when scrollbar is active*/
+
+.wrapper, .wrapper-small, .wrapper-big {
+  width: 1200px;
+  margin: 0 auto;
+  max-width: calc(100% - 80px);
+}
+
+.wrapper-small {
+  width: 780px;
+}
+
+#hero[class*='side-'] ~ #page-body .wrapper-small {
+  max-width: calc(100% - 160px);
+}
+
+.wrapper-big {
+  width: calc(100% - 80px);
+  max-width: 1680px;
+}
+
+.wrapper::after, .wrapper-small::after, .wrapper-big::after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+
+/*
+.main-content {
+	width: calc(100% - 330px);
+	}
+
+aside.sidebar {
+	width: 280px;
+	margin-bottom: 50px;
+	}
+*/
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+/* icons */
+
+i {
+  &[class*='ion-'], &[class*='fa-'] {
+    color: #000000;
+  }
+}
+
+.text-light i {
+  &[class*='ion-'], &[class*='fa-'] {
+    color: #ffffff;
+  }
+}

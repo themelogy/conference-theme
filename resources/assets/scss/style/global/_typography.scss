@@ -1,0 +1,17 @@
+.white-text {
+  color: #fff;
+}
+
+@for $i from 10 through 50 {
+  .line-height-#{$i} {
+    line-height: $i+px;
+  }
+  .font-size-#{$i} {
+    font-size: $i+px;
+  }
+}
+@for $i from 1 through 10 {
+  .txt-shadow-#{$i} {
+    @include text-shadow(0, 0, $i+px, rgba(0, 0, 0, 0.5));
+  }
+}
