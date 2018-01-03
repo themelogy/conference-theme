@@ -23,7 +23,6 @@
 
         <div class="wrapper">
             <div id="blog-grid" class="isotope-grid style-column-2 isotope-spaced-big">
-
                 @foreach($posts as $post)
                     <div class="blog-item isotope-item">
                         <div class="blog-item-inner item-inner do-anim">
@@ -32,7 +31,6 @@
                                     <img src="{{ $post->present()->firstImage(600,400,'fit',80) }}" alt="{{ $post->title }}" />
                                 </a>
                             </div>
-
                             <div class="blog-info">
                                 <div class="post-meta clearfix">
                                     <span class="post-date">{{ $post->created_at->formatLocalized('%d %B %Y') }}</span>
@@ -44,12 +42,9 @@
                         </div>
                     </div>
                 @endforeach
-
-            </div> <!-- END grid -->
-
+            </div>
             {!! $posts->render('news::pagination.default') !!}
-
-        </div> <!-- END .wrapper -->
+        </div>
 
     </section>
 @endsection

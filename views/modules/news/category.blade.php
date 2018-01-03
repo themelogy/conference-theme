@@ -44,9 +44,7 @@
                         </div>
                     </div>
                 @endforeach
-
             </div> <!-- END grid -->
-
             {!! $posts->render('news::pagination.default') !!}
 
         </div> <!-- END .wrapper -->
