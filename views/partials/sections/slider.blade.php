@@ -19,8 +19,12 @@
                                 <div class="rs-background-video-layer"
                                      data-forcerewind="on"
                                      data-volume="{{ $slide->settings->video_sound ?? 'mute' }}"
-                                     data-ytid="{{ $slide->video }}"
-                                     data-videoattributes="version=3&enablejsapi=1&html5=1& hd=0&wmode=opaque&showinfo=0&rel=0& ref=0;;origin={{ env('APP_URL') }};"
+                                     data-{{ $slide->settings->video_type }}="{{ $slide->video }}"
+                                     @if($slide->settings->video_type=='ytid')
+                                     data-videoattributes="version=3&enablejsapi=1&html5=1&hd=0&wmode=opaque&showinfo=0&rel=0&ref=0;origin={{ env('APP_URL') }};"
+                                     @else
+                                     data-videoattributes="background=1&title=0&byline=0&portrait=0&api=1"
+                                     @endif
                                      data-videorate="1.0"
                                      data-videowidth="100%"
                                      data-videoheight="100%"
