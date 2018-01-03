@@ -36,15 +36,14 @@
 
 <section class="partners p-top-bot-20">
     <div class="row">
-        <div class="col-md-12">
-            <ul class="partners align-center">
+        <div class="col-md-12 align-center">
+            <ul class="partners">
                 <li class="m-rgt-10"><a href="#"><img src="{{ Theme::url('img/logos/izevent.svg') }}" alt="İZ Event"/></a></li>
                 <li class="m-rgt-10"><a href="#"><img src="{{ Theme::url('img/logos/izvip.svg') }}" alt="İZ Vip"/></a></li>
                 <li class="m-rgt-10"><a href="#"><img src="{{ Theme::url('img/logos/iztasarim.svg') }}" alt="İZ Tasarım"/></a></li>
                 <li class="m-rgt-10"><a href="#"><img src="{{ Theme::url('img/logos/izteknik.svg') }}" alt="İZ Teknik"/></a></li>
                 <li class="m-rgt-10"><a href="#"><img src="{{ Theme::url('img/logos/iztransfer.svg') }}" alt="İZ Transfer"/></a></li>
             </ul>
-
             <p class="align-center font-size-10">Tüm hakları saklıdır. 2016 &copy; {{ setting('theme::company-name') }} </p>
         </div>
     </div>

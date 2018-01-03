@@ -6,6 +6,7 @@
 {!! Theme::style('css/ionicons.css') !!}
 {!! Theme::style('css/isotope.css') !!}
 {!! Theme::style('css/mqueries.css') !!}
+{!! Theme::style('css/flag-icon-css/css/flag-icon.min.css') !!}
 
 <link rel="shortcut icon" href="{!! Theme::url('img/favicon.png') !!}"/>
 

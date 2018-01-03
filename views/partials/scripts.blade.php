@@ -1,5 +1,4 @@
-@stack('css-stack')
-
+@stack('styles')
 <script type="text/javascript"> WebFontConfig = {
         google: {
             families: [
@@ -23,6 +22,7 @@
 {!! Theme::script('js/jquery.isotope.min.js') !!}
 @stack('scripts')
 {!! Theme::script('js/script.js') !!}
+@stack('css-stack')
 @stack('js-stack')
 
 @include('partials.analytics')

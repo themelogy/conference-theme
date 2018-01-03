@@ -93,7 +93,10 @@ gulp.task('copy', function() {
         .pipe(gulp.dest(assets.js));
     gulp.src(resources.fonts+'/**')
         .pipe(gulp.dest(assets.fonts));
-    //Revolution
+    //Flag icon
+    gulp.src(resources.vendor+'/flag-icon-css/**')
+        .pipe(gulp.dest(assets.css+'/flag-icon-css'));
+    //Revolution;
     gulp.src([
         resources.vendor + '/revolution/assets/**'
     ]).pipe(gulp.dest(assets.css + '/revolution/assets'));

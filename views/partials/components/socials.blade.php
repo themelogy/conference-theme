@@ -1,4 +1,12 @@
 <ul class="{{ isset($class) ? $class : '' }}">
+    @foreach(LaravelLocalization::getSupportedLocales() as $locale => $supportedLocale)
+    <li>
+        <a href="{{ url($locale) }}" hreflang="{{ $locale }}" ><span class="flag-icon flag-icon-{{ $locale == 'en' ? 'gb' : $locale }}"></span></a>
+    </li>
+    @endforeach
+    <li>
+        <hr/>
+    </li>
     @if(setting('theme::facebook'))
         <li>
             <a target="_blank" href="{{ setting('theme::facebook') }}">

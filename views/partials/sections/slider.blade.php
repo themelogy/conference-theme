@@ -21,7 +21,7 @@
                                      data-volume="{{ $slide->settings->video_sound ?? 'mute' }}"
                                      data-ytid="{{ $slide->video }}"
                                      data-videoattributes="version=3&enablejsapi=1&html5=1& hd=0&wmode=opaque&showinfo=0&rel=0& ref=0;;origin={{ env('APP_URL') }};"
-                                     data-videorate="1.5"
+                                     data-videorate="1.0"
                                      data-videowidth="100%"
                                      data-videoheight="100%"
                                      data-videocontrols="none"

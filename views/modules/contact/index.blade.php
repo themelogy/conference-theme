@@ -13,6 +13,7 @@
                 <div class="col-md-5">
                     <h3>{{ setting('theme::company-name') }}</h3>
                     <p>
+                        {!! setting('theme::address') !!}<br>
                         <b>T</b>: {!! setting('theme::phone') !!}<br>
                         <b>F</b>: {!! setting('theme::fax') !!}<br>
                         <b>E</b>: {!! Html::email(setting('theme::email')) !!}
