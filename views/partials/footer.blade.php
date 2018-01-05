@@ -8,7 +8,9 @@
                     <p class="line-height-16 font-size-13">{!! setting('theme::address') !!}</p>
                     <p class="line-height-16 font-size-12">
                         <b>T</b>: {!! setting('theme::phone') !!}<br>
+                        @if(setting('theme::fax'))
                         <b>F</b>: {!! setting('theme::fax') !!}<br>
+                        @endif
                         <b>E</b>: {!! Html::email(setting('theme::email')) !!}
                     </p>
                     @if(isset($footer_social))
@@ -44,7 +46,7 @@
                 <li class="m-rgt-10"><a href="#"><img src="{{ Theme::url('img/logos/izteknik.svg') }}" alt="İZ Teknik"/></a></li>
                 <li class="m-rgt-10"><a href="#"><img src="{{ Theme::url('img/logos/iztransfer.svg') }}" alt="İZ Transfer"/></a></li>
             </ul>
-            <p class="align-center font-size-10">Tüm hakları saklıdır. 2016 &copy; {{ setting('theme::company-name') }} </p>
+            <p class="align-center font-size-10">{!! trans('themes::theme.footer.copyrights', ['company'=>setting('theme::company-name'), 'date'=>Carbon::now()->format('Y'), 'url'=>url(locale())]) !!} </p>
         </div>
     </div>
 </section>

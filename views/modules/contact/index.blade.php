@@ -11,11 +11,13 @@
         <div class="container">
             <div class="row m-top-bot-50">
                 <div class="col-md-5">
-                    <h3>{{ setting('theme::company-name') }}</h3>
+                    <h3 style="font-size: 2rem; line-height: 2rem;">{{ setting('theme::company-name') }}</h3>
                     <p>
                         {!! setting('theme::address') !!}<br>
                         <b>T</b>: {!! setting('theme::phone') !!}<br>
+                        @if(setting('theme::fax'))
                         <b>F</b>: {!! setting('theme::fax') !!}<br>
+                        @endif
                         <b>E</b>: {!! Html::email(setting('theme::email')) !!}
                     </p>
 

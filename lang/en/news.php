@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title'         => '{0} Haber|[1,*] Haberler',
-    'description'   => 'En son haberler',
-    'author posts'  => ':author yazıları',
-    'recent posts'  => 'Son Haberler',
-    'popular posts' => 'Popüler',
-    'tags'          => 'Etiketler',
+    'title'         => '{0} News|[1,*] News',
+    'description'   => 'Recent News',
+    'author posts'  => ':author posts',
+    'recent posts'  => 'Last News',
+    'popular posts' => 'Populer',
+    'tags'          => 'Tags',
     'category'      => [
-        'title' => 'Kategori'
+        'title' => 'Category'
     ],
-    'announcement'  => '{0} Duyuru|[1,*] Duyurular'
+    'announcement'  => '{0} Announcement|[1,*] Announcements'
 ];
